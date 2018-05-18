@@ -1,10 +1,10 @@
 {
-    "name": "laradock/.",
+    "name": "dimafe6/gps-tracker-server",
     "license": "proprietary",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "": "src/"
         },
         "classmap": [
             "app/AppKernel.php",
@@ -12,25 +12,43 @@
         ]
     },
     "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        },
         "files": [
             "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
         ]
     },
     "require": {
-        "php": ">=5.5.9",
-        "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/orm": "^2.5",
-        "incenteev/composer-parameter-handler": "^2.0",
-        "sensio/distribution-bundle": "^5.0.19",
-        "sensio/framework-extra-bundle": "^5.0.0",
-        "symfony/monolog-bundle": "^3.1.0",
-        "symfony/polyfill-apcu": "^1.0",
-        "symfony/swiftmailer-bundle": "^2.6.4",
-        "symfony/symfony": "3.4.*",
-        "twig/twig": "^1.0||^2.0"
+        "php": "5.6.*|^7.2",
+        "alcaeus/mongo-php-adapter": "^1.1",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "doctrine/mongodb": "1.6.1",
+        "doctrine/mongodb-odm": "1.2.*",
+        "doctrine/mongodb-odm-bundle": "3.4.*",
+        "doesntmattr/mongodb-migrations": "1.1.*",
+        "doesntmattr/mongodb-migrations-bundle": "1.1.*",
+        "egeloen/base64-file-bundle": "1.0.*",
+        "eightpoints/guzzle-bundle": "5.3.*",
+        "friendsofsymfony/jsrouting-bundle": "1.6.*",
+        "friendsofsymfony/rest-bundle": "2.2.*",
+        "fzaninotto/faker": "1.7.*",
+        "imagine/imagine": "^0.7.1",
+        "incenteev/composer-parameter-handler": "2.1.*",
+        "intracto/datatables-backend": "0.1.1",
+        "jms/di-extra-bundle": "1.8.*",
+        "jms/serializer-bundle": "1.5.*",
+        "liip/imagine-bundle": "^1.9",
+        "sensio/distribution-bundle": "5.0.*",
+        "sensio/framework-extra-bundle": "3.0.*",
+        "stof/doctrine-extensions-bundle": "1.2.*",
+        "swagger-api/swagger-ui": "^3.9",
+        "symfony/assetic-bundle": "2.8.*",
+        "symfony/monolog-bundle": "^3.2",
+        "symfony/polyfill-apcu": "1.5.*",
+        "symfony/swiftmailer-bundle": "2.6.*",
+        "symfony/symfony": "3.3.9.*",
+        "thormeier/breadcrumb-bundle": "2.1.4",
+        "twig/twig": "2.4.*",
+        "willdurand/faker-bundle": "1.3.*",
+        "willdurand/js-translation-bundle": "2.6.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

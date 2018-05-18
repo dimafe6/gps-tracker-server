@@ -16,7 +16,23 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
+
+            new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            new JMS\AopBundle\JMSAopBundle(),
+            new Thormeier\BreadcrumbBundle\ThormeierBreadcrumbBundle(),
+            new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new Ivory\Base64FileBundle\IvoryBase64FileBundle(),
+            new AntiMattr\Bundle\MongoDBMigrationsBundle\MongoDBMigrationsBundle(),
+
+            new ApiBundle\ApiBundle(),
+            new DeviceBundle\DeviceBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
