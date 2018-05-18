@@ -17,7 +17,7 @@ services:
       build:
         context: ./docker/workspace
         args:
-          - PHP_COMPOSER_GLOBAL_INSTALLVERSION=${PHP_VERSION}
+          - PHP_VERSION=${PHP_VERSION}
           - INSTALL_XDEBUG=${WORKSPACE_INSTALL_XDEBUG}
           - INSTALL_BLACKFIRE=${INSTALL_BLACKFIRE}
           - INSTALL_SOAP=${WORKSPACE_INSTALL_SOAP}
