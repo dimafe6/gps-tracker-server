@@ -1,8 +1,8 @@
 <?php
 
+use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
@@ -26,13 +26,15 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new Thormeier\BreadcrumbBundle\ThormeierBreadcrumbBundle(),
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
-            new Liip\ImagineBundle\LiipImagineBundle(),
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new Ivory\Base64FileBundle\IvoryBase64FileBundle(),
             new AntiMattr\Bundle\MongoDBMigrationsBundle\MongoDBMigrationsBundle(),
+            new Enqueue\Bundle\EnqueueBundle(),
 
+            new CoreBundle\CoreBundle(),
             new ApiBundle\ApiBundle(),
             new DeviceBundle\DeviceBundle(),
+            new AdminBundle\AdminBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

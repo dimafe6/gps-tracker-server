@@ -1,0 +1,8 @@
+{% block span_widget %}
+    {% spaceless %}
+        {% set type = 'span' %}
+        <div class="form-control-static" {{ block('widget_container_attributes') }}>
+            {{ value }}
+        </div>
+    {% endspaceless %}
+{% endblock %}

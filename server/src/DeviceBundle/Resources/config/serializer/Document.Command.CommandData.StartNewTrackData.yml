@@ -1,0 +1,6 @@
+DeviceBundle\Document\Command\CommandData\StartNewTrackData:
+    exclusion_policy: ALL
+    properties:
+        trackName:
+            expose: true
+            groups: ["DEVICE_COMMAND"]

@@ -1,3 +1,28 @@
-api_homepage:
-    path:     /
-    defaults: { _controller: ApiBundle:Default:index }
+save_settings:
+    path:     /settings
+    defaults: { _controller: ApiBundle:Settings:saveSettings }
+    methods: [POST]
+
+get_settings:
+    path:     /settings
+    defaults: { _controller: ApiBundle:Settings:getSettings }
+    methods: [GET]
+
+get_sommand:
+    path:     /command
+    defaults: { _controller: ApiBundle:Command:getCommand }
+    methods: [GET]
+
+start_command:
+    path:     /command/{id}/start
+    defaults: { _controller: ApiBundle:Command:startCommand }
+    requirements:
+      id: '^[0-9a-fA-F]{24}$'
+    methods: [POST]
+
+process_command:
+    path:     /command/{id}/complete
+    defaults: { _controller: ApiBundle:Command:completeCommand }
+    requirements:
+      id: '^[0-9a-fA-F]{24}$'
+    methods: [POST]

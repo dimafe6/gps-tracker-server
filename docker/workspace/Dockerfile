@@ -261,8 +261,10 @@ ARG INSTALL_AMQP=false
 ARG PHP_VERSION=${PHP_VERSION}
 
 RUN if [ ${INSTALL_AMQP} = true ]; then \
+    apt-get update -yqq && \
     apt-get install librabbitmq-dev -y && \
-    pecl -q install amqp && \
+    # Install the amqp extension
+    pecl install amqp && \
     echo "extension=amqp.so" >> /etc/php/${PHP_VERSION}/mods-available/amqp.ini && \
     ln -s /etc/php/${PHP_VERSION}/mods-available/amqp.ini /etc/php/${PHP_VERSION}/cli/conf.d/30-amqp.ini \
 ;fi

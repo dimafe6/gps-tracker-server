@@ -1,0 +1,6 @@
+DeviceBundle\Document\Command\CommandResponse\StartNewTrackResponse:
+    exclusion_policy: ALL
+    properties:
+        trackName:
+            expose: true
+            type: string

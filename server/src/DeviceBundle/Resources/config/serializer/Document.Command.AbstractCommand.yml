@@ -1,0 +1,15 @@
+DeviceBundle\Document\Command\AbstractCommand:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: ["DEVICE_COMMAND"]
+        command:
+            expose: true
+            groups: ["DEVICE_COMMAND"]
+        commandName:
+            expose: true
+            groups: ["DEVICE_COMMAND"]
+        data:
+            expose: true
+            groups: ["DEVICE_COMMAND"]

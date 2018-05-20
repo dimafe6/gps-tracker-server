@@ -151,6 +151,7 @@ RUN if [ ${INSTALL_MONGO} = true ]; then \
 ARG INSTALL_AMQP=false
 
 RUN if [ ${INSTALL_AMQP} = true ]; then \
+    apt-get update -yqq && \
     apt-get install librabbitmq-dev -y && \
     # Install the amqp extension
     pecl install amqp && \

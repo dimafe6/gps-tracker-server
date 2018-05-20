@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <!-- Page container -->
+    <div class="page-container">
+        <!-- Page content -->
+        <div class="page-content">
+            <!-- Content area -->
+            <div class="content-wrapper" id="page-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+            <!-- /content area -->
+        </div>
+        <!-- /page content -->
+    </div>
+    <!-- /page container -->
+{% endblock %}

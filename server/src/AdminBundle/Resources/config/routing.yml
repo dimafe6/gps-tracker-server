@@ -1,0 +1,9 @@
+settings_page:
+    path:     /settings
+    defaults: { _controller: AdminBundle:Settings:index }
+    methods: [GET, POST]
+
+command_start_new_track:
+    path:     /commands/start-new-track
+    defaults: { _controller: AdminBundle:Command:startNewTrack }
+    methods: [GET, POST]
