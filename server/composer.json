@@ -27,8 +27,8 @@
         "doesntmattr/mongodb-migrations-bundle": "1.1.*",
         "egeloen/base64-file-bundle": "1.0.*",
         "eightpoints/guzzle-bundle": "5.3.*",
-        "enqueue/enqueue-bundle": "^0.7.17",
         "enqueue/amqp-ext": "^0.7.15",
+        "enqueue/enqueue-bundle": "^0.7.17",
         "friendsofsymfony/jsrouting-bundle": "1.6.*",
         "friendsofsymfony/rest-bundle": "2.2.*",
         "fzaninotto/faker": "1.7.*",
@@ -42,7 +42,6 @@
         "sensio/framework-extra-bundle": "3.0.*",
         "stof/doctrine-extensions-bundle": "1.2.*",
         "swagger-api/swagger-ui": "^3.9",
-        "symfony/assetic-bundle": "2.8.*",
         "symfony/monolog-bundle": "^3.2",
         "symfony/polyfill-apcu": "1.5.*",
         "symfony/swiftmailer-bundle": "2.6.*",
@@ -66,7 +65,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-install-cmd": [
-            "@symfony-scripts"
+            "@symfony-scripts",
+            "yarn add @symfony/webpack-encore --dev"
         ],
         "post-update-cmd": [
             "@symfony-scripts"
