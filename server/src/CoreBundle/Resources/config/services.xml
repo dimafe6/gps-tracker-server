@@ -9,6 +9,11 @@
     </parameters>
 
     <services>
+        <service id="app.exception_listener" class="CoreBundle\EventListener\ExceptionListener">
+            <tag name="kernel.event_listener" event="kernel.exception" priority="1000"/>
+            <argument type="service" id="kernel"/>
+        </service>
+
         <service id="abstract.service" class="CoreBundle\Service\AbstractService" abstract="true">
             <call method="setDocumentManager">
                 <argument type="service" id="doctrine.odm.mongodb.document_manager"/>

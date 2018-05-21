@@ -1,0 +1,32 @@
+{% trans_default_domain 'AdminBundle' %}
+{% if breadcrumbs|length %}
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                {% for crumb in breadcrumbs %}
+                    {% set crumbText = (('breadcrumbs.' ~crumb.label)|replace({'%%': '%'}))|trans(crumb.labelParameters)|replace({'%': ''}) %}
+                    {% if crumb.route == app.request.get('_route') %}
+                        <li class="active">
+                            {% if crumb.label == 'Dashboard' %}
+                                <a title="{{ crumbText }}">
+                                    <i class="icon-home4"></i>
+                                </a>
+                            {% else %}
+                                <span>{{ crumbText }}</span>
+                            {% endif %}
+                        </li>
+                    {% else %}
+                        {% set crumbPath = path(crumb.route, crumb.routeParameters) %}
+                        <li>
+                            <a href="{{ crumbPath }}" title="{{ crumbText }}">
+                                {% if crumb.label == 'Dashboard' %}
+                                    <i class="icon-home4"></i>
+                                {% else %}
+                                    {{ crumbText }}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+{% endif %}

@@ -78,7 +78,9 @@ fos_rest:
     versioning: true
     body_listener: true
     exception:
-        enabled: false
+        enabled: true
+        messages:
+            Symfony\Component\HttpKernel\Exception\BadRequestHttpException: true
     view:
         view_response_listener: true
         failed_validation: HTTP_BAD_REQUEST
@@ -108,3 +110,5 @@ enqueue:
         default_processor_queue: default
         redelivered_delay_time: 0
 
+thormeier_breadcrumb:
+    template: '@Admin/Blocks/breadcrumbs.html.twig'

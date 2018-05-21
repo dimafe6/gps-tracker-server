@@ -9,6 +9,9 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  */
 class Setting
 {
+    const SLEEP_TYPE_MANUAL = "MANUAL";
+    const SLEEP_TYPE_AUTO = "AUTO";
+
     /**
      * @MongoDB\Id(strategy="auto")
      */

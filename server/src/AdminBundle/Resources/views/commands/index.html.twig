@@ -1,0 +1,16 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Start new track">
+            {{ form_end(form) }}
+{% endblock %}

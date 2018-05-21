@@ -21,11 +21,11 @@ class SettingType extends AbstractType
     {
         $builder
             ->add('name', SpanType::class, [
-                'label' => 'Name',
+                'label' => false,
                 'attr' => ['readonly' => true]
             ])
             ->add('value', TextType::class, [
-                'label' => 'Value',
+                'label' => false,
             ]);
     }
 

@@ -17,6 +17,12 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CommandController extends BaseController
 {
+    public function indexAction(Request $request)
+    {
+        return $this->render('@Admin/commands/index.html.twig', [
+        ]);
+    }
+
     public function startNewTrackAction(Request $request)
     {
         $commandService = $this->get('device.service.command_service');
@@ -27,7 +33,7 @@ class CommandController extends BaseController
             ->setCommandName('Start new track');
 
         $form = $this->createForm(StartNewTrackCommandType::class, $command, [
-            'action' => $this->generateUrl('command_start_new_track'),
+            'action' => $this->generateUrl('admin_command_start_new_track'),
         ]);
 
         $form->handleRequest($request);
@@ -42,7 +48,7 @@ class CommandController extends BaseController
             }
         }
 
-        return $this->render('@Admin/command/command_create_new_track.html.twig', [
+        return $this->render('@Admin/commands/command_create_new_track.html.twig', [
             'form' => $form->createView(),
         ]);
     }

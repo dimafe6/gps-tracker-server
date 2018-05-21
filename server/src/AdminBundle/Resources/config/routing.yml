@@ -1,9 +1,30 @@
-settings_page:
+admin_dashboard:
+    path: /
+    defaults: { _controller: AdminBundle:Settings:index }
+    options:
+        breadcrumb:
+            label: Dashboard
+
+admin_settings_page:
     path:     /settings
     defaults: { _controller: AdminBundle:Settings:index }
     methods: [GET, POST]
+    options:
+        breadcrumb:
+            label: Device settings
+            parent_route: admin_dashboard
 
-command_start_new_track:
+admin_commands:
+    path:     /commands
+    defaults: { _controller: AdminBundle:Command:index }
+    methods: [GET]
+    options:
+        breadcrumb:
+            label: Device commands
+            parent_route: admin_dashboard
+
+
+admin_command_start_new_track:
     path:     /commands/start-new-track
     defaults: { _controller: AdminBundle:Command:startNewTrack }
     methods: [GET, POST]

@@ -9,17 +9,60 @@
 {% endblock %}
 
 {% block body %}
-    <!-- Page container -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ path('admin_dashboard') }}">
+                <i style="top: -3px" class="icon-satellite-dish2"></i>
+                 GPS tracker
+            </a>
+
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav">
+                <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="page-container">
-        <!-- Page content -->
         <div class="page-content">
-            <!-- Content area -->
+            <div class="sidebar sidebar-main">
+                <div class="sidebar-content">
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+                                <li>
+                                    <a href="{{ path('admin_dashboard') }}">
+                                        <i class="icon-home4"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin_settings_page') }}">
+                                        <i class="icon-gear"></i>
+                                        <span>Device settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('admin_commands') }}">
+                                        <i class="icon-gear"></i>
+                                        <span>Device commands</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="content-wrapper" id="page-wrapper">
                 {% block content %}{% endblock %}
             </div>
-            <!-- /content area -->
         </div>
-        <!-- /page content -->
     </div>
-    <!-- /page container -->
 {% endblock %}

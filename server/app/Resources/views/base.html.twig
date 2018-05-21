@@ -4,14 +4,17 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Gps tracker admin{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="{{ asset('build/vendor.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body class="navbar-top">
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script src="{{ asset('build/app.js') }}"></script>
+            <script src="{{ asset('build/manifest.js') }}"></script>
+            <script src="{{ asset('build/vendor.js') }}"></script>
+            {#<script src="{{ asset('build/app.js') }}"></script>#}
         {% endblock %}
     </body>
 </html>
