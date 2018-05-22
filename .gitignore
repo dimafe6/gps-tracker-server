@@ -74,3 +74,7 @@ composer.phar
 /server/npm-debug.log
 /server/yarn-error.log
 .env
+/docker/logs/apache2/
+!/docker/logs/apache2/.gitkeep
+/docker/logs/nginx/
+!/docker/logs/nginx/.gitkeep
