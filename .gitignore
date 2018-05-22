@@ -73,3 +73,4 @@ composer.phar
 /server/web/build/*
 /server/npm-debug.log
 /server/yarn-error.log
+.env
