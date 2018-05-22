@@ -1,2 +1,3 @@
 *.conf
 !default.conf
+!stage.default.conf
