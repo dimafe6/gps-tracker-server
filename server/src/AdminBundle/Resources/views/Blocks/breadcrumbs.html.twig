@@ -3,7 +3,7 @@
         <div class="breadcrumb-line">
             <ul class="breadcrumb">
                 {% for crumb in breadcrumbs %}
-                    {% set crumbText = (('breadcrumbs.' ~crumb.label)|replace({'%%': '%'}))|trans(crumb.labelParameters)|replace({'%': ''}) %}
+                    {% set crumbText = ((crumb.label)|replace({'%%': '%'}))|trans(crumb.labelParameters)|replace({'%': ''}) %}
                     {% if crumb.route == app.request.get('_route') %}
                         <li class="active">
                             {% if crumb.label == 'Dashboard' %}

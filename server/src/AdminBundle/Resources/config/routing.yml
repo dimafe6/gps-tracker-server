@@ -1,6 +1,6 @@
 admin_dashboard:
-    path: /
-    defaults: { _controller: AdminBundle:Settings:index }
+    path: /dashboard
+    defaults: { _controller: AdminBundle:Dashboard:index }
     options:
         breadcrumb:
             label: Dashboard
