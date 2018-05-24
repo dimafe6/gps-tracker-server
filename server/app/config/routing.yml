@@ -4,11 +4,6 @@ root:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: /admin/dashboard
         permanent: true
-
-api:
-    resource: "@ApiBundle/Resources/config/routing.yml"
-    prefix:   /api
-
 client:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /admin

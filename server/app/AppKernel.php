@@ -30,9 +30,11 @@ class AppKernel extends Kernel
             new Ivory\Base64FileBundle\IvoryBase64FileBundle(),
             new AntiMattr\Bundle\MongoDBMigrationsBundle\MongoDBMigrationsBundle(),
             new Enqueue\Bundle\EnqueueBundle(),
+            new Gos\Bundle\WebSocketBundle\GosWebSocketBundle(),
+            new Gos\Bundle\PubSubRouterBundle\GosPubSubRouterBundle(),
 
             new CoreBundle\CoreBundle(),
-            new ApiBundle\ApiBundle(),
+            new WebSocketBundle\WebSocketBundle(),
             new DeviceBundle\DeviceBundle(),
             new AdminBundle\AdminBundle(),
         ];

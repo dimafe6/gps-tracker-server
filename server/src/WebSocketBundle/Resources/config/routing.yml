@@ -1,0 +1,9 @@
+device:
+    channel: device
+    handler:
+        callback: 'device.topic'
+
+client:
+    channel: client
+    handler:
+        callback: 'client.topic'

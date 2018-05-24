@@ -32,6 +32,7 @@
         "friendsofsymfony/jsrouting-bundle": "1.6.*",
         "friendsofsymfony/rest-bundle": "2.2.*",
         "fzaninotto/faker": "1.7.*",
+        "gos/web-socket-bundle": "^1.8",
         "imagine/imagine": "^0.7.1",
         "incenteev/composer-parameter-handler": "2.1.*",
         "intracto/datatables-backend": "0.1.1",

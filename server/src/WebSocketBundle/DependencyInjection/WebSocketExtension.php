@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiBundle\DependencyInjection;
+namespace WebSocketBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class ApiExtension extends Extension
+class WebSocketExtension extends Extension
 {
     /**
      * {@inheritdoc}
