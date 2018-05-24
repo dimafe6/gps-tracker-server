@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class StartNewTrackCommandDataType extends AbstractType
+class StartNewTrackCommandType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -30,6 +30,7 @@ class StartNewTrackCommandDataType extends AbstractType
         $resolver->setDefaults([
             'label'      => false,
             'data_class' => StartNewTrackData::class,
+            'csrf_protection' => false
         ]);
     }
 }

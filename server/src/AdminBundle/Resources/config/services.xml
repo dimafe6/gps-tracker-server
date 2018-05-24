@@ -4,6 +4,10 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-
+        <service class="AdminBundle\RPC\CommandService" id="admin.rpc.command_service" parent="abstract.controller.service">
+            <tag name="gos_web_socket.rpc"/>
+            <argument type="service" id="device.service.command_service"/>
+            <argument type="service" id="jms_serializer.serializer"/>
+        </service>
     </services>
 </container>

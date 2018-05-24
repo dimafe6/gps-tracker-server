@@ -1,0 +1,7 @@
+acme_rpc:
+    channel: commands/{method}
+    handler:
+        callback: 'commands.rpc'
+    requirements:
+        method:
+            pattern: "[a-z_]+"

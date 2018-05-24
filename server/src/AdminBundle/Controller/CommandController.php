@@ -8,48 +8,18 @@
 
 namespace AdminBundle\Controller;
 
-use AdminBundle\Form\Command\StartNewTrackCommandType;
+use AdminBundle\Form\Command\Data\StartNewTrackCommandType;
 use CoreBundle\Controller\BaseController;
-use DeviceBundle\Document\Command\Command;
-use Doctrine\ODM\MongoDB\MongoDBException;
-use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 
 class CommandController extends BaseController
 {
     public function indexAction(Request $request)
     {
+        $startNewTrackForm = $this->createForm(StartNewTrackCommandType::class);
+
         return $this->render('@Admin/commands/index.html.twig', [
-        ]);
-    }
-
-    public function startNewTrackAction(Request $request)
-    {
-        $commandService = $this->get('device.service.command_service');
-
-        $command = new Command();
-        $command
-            ->setCommand(Command::COMMAND_START_NEW_TRACK)
-            ->setCommandName('Start new track');
-
-        $form = $this->createForm(StartNewTrackCommandType::class, $command, [
-            'action' => $this->generateUrl('admin_command_start_new_track'),
-        ]);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted()) {
-            try {
-                $commandService->createCommand($command);
-            } catch (MongoDBException $e) {
-                $form->get('data')->addError(
-                    new FormError($e->getMessage())
-                );
-            }
-        }
-
-        return $this->render('@Admin/commands/command_create_new_track.html.twig', [
-            'form' => $form->createView(),
+            'startNewTrackForm' => $startNewTrackForm->createView()
         ]);
     }
 }

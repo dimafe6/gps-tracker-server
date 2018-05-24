@@ -3,12 +3,21 @@
 namespace WebSocketBundle\Topic;
 
 use Gos\Bundle\WebSocketBundle\Topic\TopicInterface;
+use JMS\Serializer\Serializer;
 use Ratchet\ConnectionInterface;
 use Ratchet\Wamp\Topic;
 use Gos\Bundle\WebSocketBundle\Router\WampRequest;
 
 class ClientTopic implements TopicInterface
 {
+    /** @var Serializer $serializer */
+    private $serializer;
+
+    public function __construct(Serializer $serializer)
+    {
+        $this->serializer = $serializer;
+    }
+
     /**
      * This will receive any Subscription requests for this topic.
      *
@@ -49,9 +58,7 @@ class ClientTopic implements TopicInterface
      */
     public function onPublish(ConnectionInterface $connection, Topic $topic, WampRequest $request, $event, array $exclude, array $eligible)
     {
-        $topic->broadcast([
-            'msg' => $event,
-        ]);
+        $topic->broadcast($event);
     }
 
     /**

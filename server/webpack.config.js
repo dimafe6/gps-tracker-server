@@ -14,6 +14,7 @@ Encore
         'bootstrap-sass',
         './web/assets/template/js/core/app',
         './web/assets/js/app.js',
+        './web/assets/js/websocket.js',
         //Styles
         'bootstrap-sass/assets/stylesheets/_bootstrap.scss',
         './web/assets/css/app.less',
@@ -41,6 +42,7 @@ Encore
     .autoProvidejQuery()
 
     .addEntry('settings', './web/assets/js/pages/settings.js')
+    .addEntry('commands', './web/assets/js/pages/commands.js')
 ;
 
 // export the final configuration

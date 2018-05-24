@@ -72,6 +72,8 @@ trait ControllerHelperTrait
     {
         $responseData = [];
 
+        $responseData['status'] = $status;
+
         if ($message) {
             $responseData['message'] = $message;
         }

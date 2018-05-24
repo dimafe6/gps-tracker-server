@@ -1,16 +1,17 @@
-{% extends 'AdminBundle::layout.html.twig' %}
+{% form_theme form '@Core/Form/bootstrap_3_horizontal_layout.html.twig' %}
 
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-{% endblock %}
-
-{% block content %}
+<div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h6 class="panel-title">Start new track</h6>
+        </div>
+        <div class="panel-body">
             {{ form_start(form) }}
             {{ form_widget(form) }}
-            <input type="submit" value="Start new track">
+            <div class="col-lg-12 text-right">
+                <button class="btn btn-success" id="start-new-track">Start</button>
+            </div>
             {{ form_end(form) }}
-{% endblock %}
+        </div>
+    </div>
+</div>

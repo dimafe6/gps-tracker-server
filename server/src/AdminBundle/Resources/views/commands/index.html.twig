@@ -1,11 +1,7 @@
 {% extends 'AdminBundle::layout.html.twig' %}
-
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
-
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('build/commands.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -23,6 +19,6 @@
     </div>
 
     <div class="content">
-
+        {{ include('@Admin/commands/command_create_new_track.html.twig', { form: startNewTrackForm }) }}
     </div>
 {% endblock %}

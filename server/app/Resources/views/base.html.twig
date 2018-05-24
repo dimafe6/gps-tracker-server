@@ -13,11 +13,10 @@
     <body class="navbar-top">
         {% block body %}{% endblock %}
         {% block javascripts %}
-            <script src="{{ asset('build/manifest.js') }}"></script>
-            <script src="{{ asset('build/vendor.js') }}"></script>
             <script src="{{ asset('/assets/js/websocket/autobahn.min.js') }}"></script>
             <script src="{{ asset('/assets/js/websocket/gos_web_socket_client.js') }}"></script>
-            <script src="{{ asset('/assets/js/websocket.js') }}"></script> {#TODO: move to webpack#}
+            <script src="{{ asset('build/manifest.js') }}"></script>
+            <script src="{{ asset('build/vendor.js') }}"></script>
         {% endblock %}
     </body>
 </html>

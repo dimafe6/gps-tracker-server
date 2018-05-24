@@ -6,9 +6,11 @@
     <services>
         <service class="WebSocketBundle\Topic\DeviceTopic" id="web_socket.topic.device_topic">
             <tag name="gos_web_socket.topic"/>
+            <argument type="service" id="device.service.setting_service"/>
         </service>
         <service class="WebSocketBundle\Topic\ClientTopic" id="web_socket.topic.client_topic">
             <tag name="gos_web_socket.topic"/>
+            <argument type="service" id="jms_serializer.serializer"/>
         </service>
     </services>
 </container>

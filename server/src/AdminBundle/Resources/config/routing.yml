@@ -22,9 +22,3 @@ admin_commands:
         breadcrumb:
             label: Device commands
             parent_route: admin_dashboard
-
-
-admin_command_start_new_track:
-    path:     /commands/start-new-track
-    defaults: { _controller: AdminBundle:Command:startNewTrack }
-    methods: [GET, POST]

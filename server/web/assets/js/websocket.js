@@ -3,8 +3,12 @@ global.WSSession = null;
 
 webSocket.on("socket/connect", function (session) {
     WSSession = session;
+
+    notify("Web socket successfully Connected!", 'success');
+
     session.subscribe("device", function (uri, payload) {
-        console.log("Device: ", payload.msg);
+        var json = JSON.parse(payload);
+        console.log("Device: ", json);
     });
 
     session.subscribe("client", function (uri, payload) {
@@ -15,7 +19,9 @@ webSocket.on("socket/connect", function (session) {
 });
 
 webSocket.on("socket/disconnect", function (error) {
-    //error provides us with some insight into the disconnection: error.reason and error.code
     WSSession = null;
+
     console.log("Disconnected for " + error.reason + " with code " + error.code);
+
+    notify("Web socket not connected", 'error');
 });

@@ -114,9 +114,12 @@ thormeier_breadcrumb:
     template: '@Admin/Blocks/breadcrumbs.html.twig'
 
 gos_web_socket:
+    rpc:
+        - "@admin.rpc.command_service"
     server:
         port: 8080
         host: 0.0.0.0
         router:
             resources:
                 - "@WebSocketBundle/Resources/config/routing.yml"
+                - "@AdminBundle/Resources/config/RPC.yml"

@@ -2,6 +2,7 @@
 
 namespace WebSocketBundle\Topic;
 
+use DeviceBundle\Service\SettingService;
 use Gos\Bundle\WebSocketBundle\Router\WampRequest;
 use Gos\Bundle\WebSocketBundle\Topic\TopicInterface;
 use Ratchet\ConnectionInterface;
@@ -10,6 +11,14 @@ use Ratchet\Wamp\WampConnection;
 
 class DeviceTopic implements TopicInterface
 {
+    /** @var SettingService $settingService */
+    private $settingService;
+
+    public function __construct(SettingService $settingService)
+    {
+        $this->settingService = $settingService;
+    }
+
     /**
      * This will receive any Subscription requests for this topic.
      *
@@ -21,6 +30,8 @@ class DeviceTopic implements TopicInterface
     public function onSubscribe(ConnectionInterface $connection, Topic $topic, WampRequest $request)
     {
         $connection->event('client', ['msg' => 'Device connected']);
+        $settings = $this->settingService->getSettingsArrayForDevice();
+
     }
 
     /**

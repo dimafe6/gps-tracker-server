@@ -9,6 +9,7 @@
 namespace DeviceBundle\Service;
 
 use CoreBundle\Service\AbstractService;
+use DeviceBundle\Document\Command\Command;
 use DeviceBundle\Document\Command\CommandInterface;
 use DeviceBundle\Document\Command\CommandResponse\CommandResponseInterface;
 use DeviceBundle\Repository\CommandRepository;
@@ -42,11 +43,20 @@ class CommandService extends AbstractService
     }
 
     /**
-     * @param CommandInterface $command
+     * @param $commandName
+     * @param $commandType
+     * @param $commandData
+     * @return Command
      * @throws \Doctrine\ODM\MongoDB\MongoDBException
      */
-    public function createCommand(CommandInterface $command)
+    public function createCommand($commandName, $commandType, $commandData)
     {
+        $command = new Command();
+        $command
+            ->setCommand($commandType)
+            ->setCommandName($commandName)
+            ->setData($commandData);
+
         $qb = $this->getRepository()->createQueryBuilder();
         $qb
             ->field('command')->equals($command->getCommand())
@@ -55,6 +65,8 @@ class CommandService extends AbstractService
             ->execute();
 
         $this->saveDocument($command);
+
+        return $command;
     }
 
     /**
