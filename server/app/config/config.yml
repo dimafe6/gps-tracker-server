@@ -117,7 +117,7 @@ gos_web_socket:
     rpc:
         - "@admin.rpc.command_service"
     server:
-        port: 8080
+        port: 8081
         host: 0.0.0.0
         router:
             resources:

@@ -1,4 +1,4 @@
-global.webSocket = WS.connect("ws://gps-tracker.local:8080");
+global.webSocket = WS.connect("ws://gps-tracker.local:8081");
 global.WSSession = null;
 
 webSocket.on("socket/connect", function (session) {
@@ -25,3 +25,4 @@ webSocket.on("socket/disconnect", function (error) {
 
     notify("Web socket not connected", 'error');
 });
+``
