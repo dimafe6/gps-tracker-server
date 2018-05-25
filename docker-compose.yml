@@ -189,4 +189,5 @@ services:
           - "8080:8080"
           - "8441:8441"
           - "9443:9443"
-        #volumes:
+        environment:
+                RABBITMQ_ERLANG_COOKIE: ${BLYNK_SERVER_VERSION}
