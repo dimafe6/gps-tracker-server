@@ -190,4 +190,4 @@ services:
           - "8441:8441"
           - "9443:9443"
         environment:
-                RABBITMQ_ERLANG_COOKIE: ${BLYNK_SERVER_VERSION}
+                BLYNK_SERVER_VERSION: ${BLYNK_SERVER_VERSION}
