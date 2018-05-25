@@ -1,4 +1,4 @@
-FROM java:9-jre
+FROM openjdk:10-jre
 MAINTAINER Michael Ferguson <mpherg@gmail.com>
 
 ARG BLYNK_SERVER_VERSION=${BLYNK_SERVER_VERSION}
