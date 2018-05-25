@@ -25,4 +25,3 @@ webSocket.on("socket/disconnect", function (error) {
 
     notify("Web socket not connected", 'error');
 });
-``

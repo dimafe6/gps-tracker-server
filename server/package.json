@@ -6,6 +6,7 @@
     "less-loader": "^4.1.0"
   },
   "dependencies": {
+    "blynk-library": "^0.5.2",
     "jquery-validation": "^1.17.0",
     "less": "^3.0.4",
     "node-sass": "^4.9.0",
