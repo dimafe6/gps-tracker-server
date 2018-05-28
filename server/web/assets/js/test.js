@@ -2,7 +2,7 @@ var Blynk = require('blynk-library');
 
 var AUTH = 'a1436b98817c426ea91740829e164a3f';
 
-var blynk = new Blynk.Blynk(AUTH,);
+var blynk = new Blynk.Blynk(AUTH);
 
 var v1 = new blynk.VirtualPin(1);
 var v12 = new blynk.VirtualPin(12);

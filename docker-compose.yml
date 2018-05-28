@@ -182,15 +182,3 @@ services:
       volumes:
         - "./docker/rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins"
         - "./docker/rabbitmq/rabbitmq_delayed_message_exchange-20171201-3.7.x.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.7.5/plugins/rabbitmq_delayed_message_exchange-20171201-3.7.x.ez"
-
-    blynk:
-        build:
-          context: ./docker/blynk
-          args:
-            - BLYNK_SERVER_VERSION=${BLYNK_SERVER_VERSION}
-        ports:
-          - "8080:8080"
-          - "8441:8441"
-          - "9443:9443"
-        volumes:
-          - ./docker/blynk/config:/config
