@@ -9,6 +9,7 @@
     "blynk-library": "^0.5.2",
     "jquery-validation": "^1.17.0",
     "less": "^3.0.4",
+    "net": "^1.0.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "webpack-notifier": "^1.6.0"
