@@ -93,23 +93,6 @@ fos_rest:
             - { path: "^/api",  priorities: ['json', 'xml'], fallback_format: json, prefer_extension: true }
             - { path: '^/', priorities: [ 'html', '*/*'], fallback_format: html, prefer_extension: true }
 
-# RabbitMQ configuration
-enqueue:
-    transport:
-        default: 'rabbitmq_amqp'
-        rabbitmq_amqp:
-          dsn: 'amqp://rabbitmq:rabbitmq@localhost:5672/'
-          delay_strategy: delayed_message_plugin
-    client:
-        traceable_producer:   true
-        prefix:               cardrop
-        app_name:             cardrop
-        router_topic:         default
-        router_queue:         default
-        router_processor:     enqueue.client.router_processor
-        default_processor_queue: default
-        redelivered_delay_time: 0
-
 thormeier_breadcrumb:
     template: '@Admin/Blocks/breadcrumbs.html.twig'
 

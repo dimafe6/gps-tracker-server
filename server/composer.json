@@ -27,8 +27,6 @@
         "doesntmattr/mongodb-migrations-bundle": "1.1.*",
         "egeloen/base64-file-bundle": "1.0.*",
         "eightpoints/guzzle-bundle": "5.3.*",
-        "enqueue/amqp-ext": "^0.7.15",
-        "enqueue/enqueue-bundle": "^0.7.17",
         "friendsofsymfony/jsrouting-bundle": "1.6.*",
         "friendsofsymfony/rest-bundle": "2.2.*",
         "fzaninotto/faker": "1.7.*",

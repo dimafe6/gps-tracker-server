@@ -29,7 +29,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             new Ivory\Base64FileBundle\IvoryBase64FileBundle(),
             new AntiMattr\Bundle\MongoDBMigrationsBundle\MongoDBMigrationsBundle(),
-            new Enqueue\Bundle\EnqueueBundle(),
             new Gos\Bundle\WebSocketBundle\GosWebSocketBundle(),
             new Gos\Bundle\PubSubRouterBundle\GosPubSubRouterBundle(),
 
